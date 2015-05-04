@@ -7,6 +7,7 @@ int** Make2DIntArray(int arraySizeX, int arraySizeY);
 void free2DArray(int **matrixF,int nx);
 void loadMatrix(int **matrixF, int size);
 void printMatrix(int **matrixF,int size);
+int findFriends(int **matrixF,int size, int user);
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -70,6 +71,22 @@ void free2DArray(int **matrixF,int nx){
        free(matrixF[i]);  
     }  
     free(matrixF);  
+}
+
+int findFriends(int **matrixF,int size, int user){
+	
+	int j =0;
+	int i = user;
+	int sum = 0;
+	
+	for(j=0;j<size;j++){
+		//	printf("item  %d , %d  = %d \n",i,j,matrixF[i][j]);	
+		if(matrixF[i][j] == 1){
+			sum++;	
+		}
+		
+	}	
+	return sum;	
 }
 
 
