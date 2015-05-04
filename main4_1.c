@@ -8,6 +8,8 @@ void free2DArray(int **matrixF,int nx);
 void loadMatrix(int **matrixF, int size);
 void printMatrix(int **matrixF,int size);
 int findFriends(int **matrixF,int size, int user);
+int commonFriends(int **matrixF,int size,int user1,int user2);
+int* fetchFriendsByUserId(int **matrixF,int size,int user);
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -89,6 +91,44 @@ int findFriends(int **matrixF,int size, int user){
 	return sum;	
 }
 
+int commonFriends(int **matrixF,int size,int user1,int user2){
+	
+	
+	int* friends1= fetchFriendsByUserId(matrixF,size,user1);
+	
+	int* friends2= fetchFriendsByUserId(matrixF,size,user2);
+	
+	//TODO
+			
+			
+}
+
+/* method that fetches array of friends. Array contains the id of friend or 0 if no friend */
+int* fetchFriendsByUserId(int **matrixF,int size,int user){
+	
+		
+	int j =0;
+	int i = user;
+	
+
+	int friends[size];
+	int *p = friends;
+
+	
+	/* */
+	for(j=0;j<size;j++){
+	
+		if(matrixF[i][j] == 1){
+		   friends[j]=j;
+		}
+		else{
+			friends[j]= -1;
+		}
+		
+	}	
+	return 	p;
+		
+}
 
 
 
